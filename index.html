@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Виски и Бурбон</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/draggabilly.pkgd.min.js"></script>
+  <script src="js/db.js"></script>
+</head>
+<body>
+<div class="ave">
+  <div class="ave__title">Введите email</div>
+  <input type="email" maxlength="40" autocomplete="off" onkeyup="checkValidate(this)" autofocus class="ave__input">
+  <div class="ave__button button" onclick="logIn()">Продолжить</div>
+</div>
+<div class="header">
+  <div class="header__menu" onclick="toggleHamburger()"></div>
+  <div class="header__title">Порядок</div>
+</div>
+<div class="main">
+    <div class="task">
+        <div class="lock hidden" style="z-index: 3"></div>
+        <div class="info" style="z-index: 2">
+            <div class="info__title">Расставьте в правильном порядке этапы производства виски.</div>
+            <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+        </div>
+        <div class="task__page y left" style="z-index: 1">
+            <div class="y__grid">
+                <div class="y__movebox">
+                    <div class="y__move" style="top: 0">Ферментация</div>
+                    <div class="y__move" style="top: 60px">Бутилирование</div>
+                    <div class="y__move" style="top: 120px">Измельчение</div>
+                    <div class="y__move" style="top: 180px">Соложение</div>
+                    <div class="y__move" style="top: 240px">Выдержка</div>
+                    <div class="y__move" style="top: 300px">Дистилляция</div>
+                </div>
+            </div>
+            <div class="button" onclick="scoreButton(0);sortYScore()">Нажмите для завершения!</div>
+        </div>
+    </div>
+
+    <div class="task hidden">
+        <div class="lock hidden" style="z-index: 3"></div>
+        <div class="info" style="z-index: 2">
+            <div class="info__title">Определите, какой стране принадлежит указанный бренд виски.</div>
+            <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+        </div>
+        <div class="task__page any left" style="z-index: 1">
+            <div class="any__grid">
+                <div class="any__zone">
+                    <div class="any__column" style="background-image: url('img/sc.webp')"></div>
+                    <div class="any__column" style="background-image: url('img/ir.webp')"></div>
+                    <div class="any__column" style="background-image: url('img/usa.webp')"></div>
+                </div>
+                <div class="any__move"></div>
+            </div>
+            <div class="button" onclick="scoreButton(1)">Нажмите для завершения!</div>
+        </div>
+    </div>
+  
+  <!-- задания -->
+  
+  <div class="task hidden">
+    <div class="lock hidden"></div>
+    <div class="info">
+      <div class="info__title">Прочитайте внимательно вопрос. Дайте развёрнутый ответ в комментариях к уроку.</div>
+      <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page asked left">
+      <div class="asked__title"></div>
+      <div class=" button" onclick="endButton()">Дать ответ!</div>
+    </div>
+  </div>
+</div>
+<div class="footer"></div>
+<div class="menu menu__off">
+  <div class="menu__content"></div>
+</div>
+<script src="js/sort_any.js"></script>
+<script src="js/sort_y.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
